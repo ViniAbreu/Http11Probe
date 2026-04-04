@@ -85,4 +85,4 @@ The [Probe workflow](.github/workflows/probe.yml) runs on PRs and `workflow_disp
 
 ## Results
 
-See the [live comparison](https://MDA2AV.github.io/Http11Probe/probe-results/) across all servers, or browse the [test glossary](https://MDA2AV.github.io/Http11Probe/docs/) for per-test RFC references and explanations.
+See the [live comparison](https://www.http-probe.com/probe-results/) across all servers, or browse the [test glossary](https://www.http-probe.com/docs/) for per-test RFC references and explanations.
