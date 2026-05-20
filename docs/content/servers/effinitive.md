@@ -66,7 +66,7 @@ namespace EffinitiveServer.Endpoints
         public override ValueTask<string> HandleAsync(CancellationToken ct = default)
         {
             var body = HttpContext?.Body;
-            return ValueTask.FromResult(body is { Length: > 0 } ? Encoding.UTF8.GetString(body) : "");
+            return ValueTask.FromResult(body is { Length: > 0 } ? Encoding.UTF8.GetString(body.Value.Span) : "");
         }
     }
 

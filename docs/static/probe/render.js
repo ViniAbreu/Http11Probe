@@ -503,6 +503,7 @@ window.ProbeRender = (function () {
     'Caddy': '/servers/caddy/',
     'Deno': '/servers/deno/',
     'EmbedIO': '/servers/embedio/',
+    'Effinitive': '/servers/effinitive/',
     'Envoy': '/servers/envoy/',
     'Express': '/servers/express/',
     'FastEndpoints': '/servers/fastendpoints/',
