@@ -10,14 +10,14 @@ uses
   Generics.Collections,
   Horse;
 
-procedure GetCallBack(Req: THorseRequest; Res: THorseResponse);
+procedure AllCallBAck(Req: THorseRequest; Res: THorseResponse);
+var
+  LBody: string;
 begin
-  Res.Send('OK');
-end;
-
-procedure PostCallBAck(Req: THorseRequest; Res: THorseResponse);
-begin
-  Res.Send(Req.Body);
+  LBody := 'OK';
+  if Req.Method.Equals('POST') then
+    LBody := Req.Body;
+  Res.Send(LBody);
 end;
 
 procedure EchoCallBack(Req: THorseRequest; Res: THorseResponse);
@@ -53,8 +53,7 @@ begin
 end;
 
 begin
-  THorse.Get('/', GetCallBack);
-  THorse.Post('/', PostCallBack);
+  THorse.All('/', AllCallBack);
   THorse.All('/echo', EchoCallBack);
   THorse.All('/cookie', CookieCallBack);
 
