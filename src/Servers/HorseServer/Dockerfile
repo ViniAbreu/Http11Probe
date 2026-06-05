@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN git clone --depth 1 --branch 3.2.0 \
       https://github.com/HashLoad/horse.git /horse
 WORKDIR /app
-COPY . .
+COPY src/Servers/HorseServer/HorseServer.lpr .
+COPY src/Servers/HorseServer/HorseServer.lpi .
 RUN mkdir -p /app/out && \
     fpc \
       -Mdelphi \
