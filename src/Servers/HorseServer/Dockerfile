@@ -22,6 +22,7 @@ RUN mkdir -p /app/out && \
 FROM ubuntu:24.04 AS runtime
 RUN apt-get update && apt-get install -y --no-install-recommends libc6 \
     && rm -rf /var/lib/apt/lists/*
+RUN useradd --system --no-create-home --shell /usr/sbin/nologin horse
 WORKDIR /app
 COPY --from=builder /app/HorseServer /app/HorseServer
 RUN chmod +x /app/HorseServer
