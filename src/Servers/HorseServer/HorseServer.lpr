@@ -8,14 +8,15 @@ uses
   {$ENDIF}
   SysUtils,
   Generics.Collections,
-  Horse;
+  Horse,
+  Horse.Commons;
 
 procedure AllCallBAck(Req: THorseRequest; Res: THorseResponse);
 var
   LBody: string;
 begin
   LBody := 'OK';
-  if Req.Method.Equals('POST') then
+  if Req.MethodType = mtPost then
     LBody := Req.Body;
   Res.Send(LBody);
 end;
